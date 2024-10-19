@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+         https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" 
+         version="5.0">
+
+    <display-name>Hospital_Management_System</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>add-patient.jsp</welcome-file>
+        <welcome-file>add-billing.jsp</welcome-file>
+        <welcome-file>add-ehr.jsp</welcome-file>
+        <welcome-file>add-inventory.jsp</welcome-file>
+        <welcome-file>add-staff.jsp</welcome-file>
+        <welcome-file>appointment-list.jsp</welcome-file>
+        <welcome-file>billing-list.jsp</welcome-file>
+        <welcome-file>ehr-list.jsp</welcome-file>
+        <welcome-file>inventory-list.jsp</welcome-file>
+        <welcome-file>patient-list.jsp</welcome-file>
+        <welcome-file>staff-list.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>PatientServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.PatientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientServlet</servlet-name>
+        <url-pattern>/patients</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.AppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <url-pattern>/appointments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EHRServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.EHRServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EHRServlet</servlet-name>
+        <url-pattern>/ehr</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BillingServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.BillingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BillingServlet</servlet-name>
+        <url-pattern>/billing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InventoryServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.InventoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InventoryServlet</servlet-name>
+        <url-pattern>/inventory</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StaffServlet</servlet-name>
+        <servlet-class>com.hospital.servlet.StaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffServlet</servlet-name>
+        <url-pattern>/staff</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ignore</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
+</element>
